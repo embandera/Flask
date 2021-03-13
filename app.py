@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return "Hello, Flask!"
+    return render_template("home.html")
 
 @app.route("/hello/")
 @app.route("/hello/<name>")
@@ -16,4 +16,12 @@ def hello_there(name = None):
         "hello_there.html",
         name=name,
         
-    )
+# New functions
+@app.route("/about/")
+def about():
+    return render_template("about.html")
+
+@app.route("/contact/")
+def contact():
+    return render_template("contact.html")
+   )
